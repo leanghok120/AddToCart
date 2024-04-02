@@ -15,15 +15,16 @@ const shoppingList = ref(db, "shoppingList")
 
 addButtonEl.addEventListener("click", function() {
   let inputValue = inputFieldEl.value
+
   push(shoppingList, inputValue)
 
-  addItemToCart(inputValue)
-  
-  clearInputField(inputFieldEl)
+  clearInputField()
 })
 
 onValue(shoppingList, function(snapshot) {
   let shoppingsArray = Object.values(snapshot.val())
+
+  shoppingListEl.innerHTML = ""
 
   for (let i = 0; i < shoppingsArray.length; i++) {
     let currentItem = shoppingsArray[i]
@@ -36,6 +37,6 @@ function addItemToCart(value) {
   shoppingListEl.innerHTML += `<li>${value}</li>` 
 }
 
-function clearInputField(inputField) {
-  inputField.value = "" 
+function clearInputField() {
+  shoppingListEl.value = "" 
 }
