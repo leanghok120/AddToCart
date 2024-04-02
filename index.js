@@ -38,5 +38,5 @@ function addItemToCart(value) {
 }
 
 function clearInputField() {
-  shoppingListEl.value = "" 
+  inputFieldEl.value = "" 
 }
