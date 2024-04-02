@@ -14,12 +14,17 @@ const shoppingList = ref(db, "shoppingList")
 
 addButtonEl.addEventListener("click", function() {
   let inputValue = inputFieldEl.value
-
   push(shoppingList, inputValue)
 
-  console.log(inputValue + " is added to database")
-  shoppingListEl.innerHTML += `<li>${inputValue}</li>` 
+  addItemToCart(inputValue)
   
-  inputFieldEl.value = ""
-  console.log("Clear input-field")
+  clearInputField(inputFieldEl)
 })
+
+function addItemToCart(value) {
+  shoppingListEl.innerHTML += `<li>${value}</li>` 
+}
+
+function clearInputField(inputField) {
+  inputField.value = "" 
+}
