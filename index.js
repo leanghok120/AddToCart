@@ -22,7 +22,7 @@ addButtonEl.addEventListener("click", function() {
 })
 
 onValue(shoppingList, function(snapshot) {
-  let shoppingsArray = Object.values(snapshot.val())
+  let shoppingsArray = Object.entries(snapshot.val())
 
   clearShoppingList()
 
@@ -30,7 +30,10 @@ onValue(shoppingList, function(snapshot) {
   for (let i = 0; i < shoppingsArray.length; i++) {
     let currentItem = shoppingsArray[i]
 
-    addItemToCart(currentItem)
+    let currentItemID = currentItem[0]
+    let currentItemValue = currentItem[1]
+
+    addItemToCart(currentItemValue)
   }
 })
 
