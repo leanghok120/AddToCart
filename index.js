@@ -24,7 +24,8 @@ addButtonEl.addEventListener("click", function() {
 onValue(shoppingList, function(snapshot) {
   let shoppingsArray = Object.values(snapshot.val())
 
-  shoppingListEl.innerHTML = ""
+  clearShoppingList()
+
 
   for (let i = 0; i < shoppingsArray.length; i++) {
     let currentItem = shoppingsArray[i]
@@ -32,6 +33,10 @@ onValue(shoppingList, function(snapshot) {
     addItemToCart(currentItem)
   }
 })
+
+function clearShoppingList() {
+  shoppingListEl.innerHTML = ""
+}
 
 function addItemToCart(value) {
   shoppingListEl.innerHTML += `<li>${value}</li>` 
