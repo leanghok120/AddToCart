@@ -30,7 +30,7 @@ input {
   margin: 10px 0;
 }
 
-button {
+#add-button {
   color: #FDFDFD;
   background-color: #AC485A;
   border: 0;
@@ -39,6 +39,12 @@ button {
   font-size: 20px;
   text-align: center;
   font-family: 'Rubik', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.add-button:hover {
+  background-color: #432000;
 }
 
 ul {
@@ -57,5 +63,10 @@ ul li {
   flex-grow: 1;
   text-align: center;
   font-size: 17px;
+  cursor: pointer;
+  transition: all 0.15s;
 }
 
+ul li:hover {
+  background-color: #FFECC7;
+}
