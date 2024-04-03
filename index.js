@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
@@ -10,18 +10,18 @@ const appSettings = {
 }
 const app = initializeApp(appSettings)
 const db = getDatabase(app)
-const shoppingList = ref(db, "shoppingList")
+const shoppingListInDB = ref(db, "shoppingList")
 
 
 addButtonEl.addEventListener("click", function() {
   let inputValue = inputFieldEl.value
 
-  push(shoppingList, inputValue)
+  push(shoppingListInDB, inputValue)
 
   clearInputField()
 })
 
-onValue(shoppingList, function(snapshot) {
+onValue(shoppingListInDB, function(snapshot) {
   let shoppingsArray = Object.entries(snapshot.val())
 
   clearShoppingList()
@@ -45,6 +45,13 @@ function addItemToCart(item) {
   let newEl = document.createElement("li")
 
   newEl.textContent = itemValue
+
+  // finish implementing a delete item component (try not to look at the srimba)
+  newEl.addEventListener("click", function() {
+    let itemLocationInDB = ref(db, `shoppingList/${itemID}`)
+
+    remove(itemLocationInDB)
+  })
 
   shoppingListEl.append(newEl)
 }
