@@ -30,10 +30,7 @@ onValue(shoppingList, function(snapshot) {
   for (let i = 0; i < shoppingsArray.length; i++) {
     let currentItem = shoppingsArray[i]
 
-    let currentItemID = currentItem[0]
-    let currentItemValue = currentItem[1]
-
-    addItemToCart(currentItemValue)
+    addItemToCart(currentItem)
   }
 })
 
@@ -41,12 +38,13 @@ function clearShoppingList() {
   shoppingListEl.innerHTML = ""
 }
 
-function addItemToCart(value) {
-  // shoppingListEl.innerHTML += `<li>${value}</li>` 
-  
+function addItemToCart(item) {
+  let itemID = item[0]
+  let itemValue = item[1]
+
   let newEl = document.createElement("li")
 
-  newEl.textContent = value
+  newEl.textContent = itemValue
 
   shoppingListEl.append(newEl)
 }
