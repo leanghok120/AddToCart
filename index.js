@@ -42,7 +42,13 @@ function clearShoppingList() {
 }
 
 function addItemToCart(value) {
-  shoppingListEl.innerHTML += `<li>${value}</li>` 
+  // shoppingListEl.innerHTML += `<li>${value}</li>` 
+  
+  let newEl = document.createElement("li")
+
+  newEl.textContent = value
+
+  shoppingListEl.append(newEl)
 }
 
 function clearInputField() {
