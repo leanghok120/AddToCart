@@ -22,15 +22,20 @@ addButtonEl.addEventListener("click", function() {
 })
 
 onValue(shoppingListInDB, function(snapshot) {
-  let shoppingsArray = Object.entries(snapshot.val())
+  
+  if (snapshot.exists() == true) {
+    let shoppingsArray = Object.entries(snapshot.val())
 
-  clearShoppingList()
+    clearShoppingList()
 
 
-  for (let i = 0; i < shoppingsArray.length; i++) {
-    let currentItem = shoppingsArray[i]
+    for (let i = 0; i < shoppingsArray.length; i++) {
+      let currentItem = shoppingsArray[i]
 
-    addItemToCart(currentItem)
+      addItemToCart(currentItem)
+    }
+  } else {
+    shoppingListEl.textContent = "No items here... yet"
   }
 })
 
