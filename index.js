@@ -51,7 +51,8 @@ function addItemToCart(item) {
 
   newEl.textContent = itemValue
 
-  // finish implementing a delete item component (try not to look at the srimba)
+  newEl.tabIndex = 0
+
   newEl.addEventListener("click", function() {
     let itemLocationInDB = ref(db, `shoppingList/${itemID}`)
 
