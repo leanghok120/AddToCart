@@ -5,6 +5,8 @@ html, body {
   background-color: #EEF0F4;
   height: 100%;
   user-select: none;
+  background-color: #A6B1E1;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -19,9 +21,9 @@ img {
   margin: 0 auto;
 }
 
-input {
+#input-field {
   color: #432000;
-  background-color: #DCE1EB;
+  background-color: #DCD6F7;
   border: 0;
   padding: 15px;
   border-radius: 8px;
@@ -32,20 +34,21 @@ input {
 }
 
 #add-button {
-  color: #FDFDFD;
-  background-color: #AC485A;
+  color: #424874;
+  background-color: #F4EEFF;
   border: 0;
   padding: 15px;
   border-radius: 8px;
   font-size: 20px;
+  font-weight: bold;
   text-align: center;
   font-family: 'Rubik', sans-serif;
   cursor: pointer;
   transition: all 0.15s;
 }
 
-.add-button:hover {
-  background-color: #432000;
+#add-button:hover {
+  opacity: 0.5;
 }
 
 ul {
@@ -57,7 +60,7 @@ ul {
 }
 
 ul li {
-  background-color: #FFFDF8;
+  background-color: #DCD6F7;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 15px;
@@ -66,8 +69,9 @@ ul li {
   font-size: 17px;
   cursor: pointer;
   transition: all 0.15s;
+  color: #424874;
 }
 
 ul li:hover {
-  background-color: #FFECC7;
+  opacity: 0.5;
 }
