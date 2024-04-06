@@ -46,10 +46,11 @@ function clearShoppingList() {
 function addItemToCart(item) {
   let itemID = item[0]
   let itemValue = item[1]
+  let itemCap = itemValue.charAt(0).toUpperCase() + itemValue.slice(1)
 
   let newEl = document.createElement("li")
 
-  newEl.textContent = itemValue
+  newEl.textContent = itemCap
 
   newEl.tabIndex = 0
 
