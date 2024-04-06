@@ -7,6 +7,7 @@ html, body {
   user-select: none;
   background-color: #A6B1E1;
   font-family: "Poppins", sans-serif;
+  padding: 20px 10px;
 }
 
 .container {
@@ -17,7 +18,7 @@ html, body {
 }
 
 img {
-  width: 300px;
+  width: 150px;
   margin: 0 auto;
 }
 
@@ -62,8 +63,8 @@ ul {
 ul li {
   background-color: #DCD6F7;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  padding: 15px;
+  border-radius: 10px;
+  padding: 20px;
   flex-grow: 1;
   text-align: center;
   font-size: 17px;
